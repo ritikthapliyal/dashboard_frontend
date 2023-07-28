@@ -2,7 +2,7 @@
   "name": "dashboard",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://yourusername.github.io/dashboard_frontend",
+  "homepage": "https://ritikthapliyal.github.io/dashboard_frontend",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.17.0",
