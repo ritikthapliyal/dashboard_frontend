@@ -4,7 +4,7 @@ export const userApi = createApi({
     reducerPath:"user",
     baseQuery: fetchBaseQuery({
         baseUrl : 'https://83hdq248j9.execute-api.ap-south-1.amazonaws.com/dev/dashboard',
-        // credentials: 'include'
+        credentials: 'include'
     }),
     endpoints(builder){
         return {
