@@ -9,7 +9,7 @@ const getJwtToken = () => {
 export const userApi = createApi({
     reducerPath:"user",
     baseQuery: fetchBaseQuery({
-        baseUrl : 'https://83hdq248j9.execute-api.ap-south-1.amazonaws.com/dev/dashboard',
+        baseUrl : 'https://83hdq248j9.execute-api.ap-south-1.amazonaws.com/dev',
         credentials: 'include',
         prepareHeaders(headers) {
             const token = getJwtToken();
@@ -24,9 +24,17 @@ export const userApi = createApi({
             login : builder.mutation({ 
                 query: (data) => { 
                   return {
-                    url: '/login',
+                    url: '/dashboard/login',
                     method: 'POST',
                     body: data,
+                  };
+                },
+            }),
+            dashboard : builder.mutation({ 
+                query: () => { 
+                  return {
+                    url: '/dashboard',
+                    method: 'GET',
                   };
                 },
             }),
@@ -43,4 +51,4 @@ export const userApi = createApi({
 })
 
 
-export const {useLoginMutation,useLogoutMutation} = userApi
+export const {useLoginMutation,useLogoutMutation,useDashboardMutation} = userApi
