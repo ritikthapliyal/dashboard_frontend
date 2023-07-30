@@ -2,7 +2,7 @@ import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 
 
 const getJwtToken = () => {
-    return localStorage.getItem('jwtToken');
+    return localStorage.getItem('token');
 }
 
 

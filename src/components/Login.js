@@ -17,7 +17,7 @@ function Login() {
             console.log(res)
             
             if (res && res.token) {
-                localStorage.setItem('jwtToken', res.jwt);
+                localStorage.setItem('token', res.token);
             }
 
             navigate('/dashboard')
