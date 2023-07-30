@@ -12,8 +12,14 @@ function Login() {
 
     const handleLogin = async()=>{
         try{
+            
             const res = await login({masterKey}).unwrap()
             console.log(res)
+            
+            if (res && res.token) {
+                localStorage.setItem('jwtToken', res.jwt);
+            }
+
             navigate('/dashboard')
         }
         catch(err){

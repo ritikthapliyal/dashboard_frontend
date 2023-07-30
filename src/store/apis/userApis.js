@@ -1,10 +1,23 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 
+
+const getJwtToken = () => {
+    return localStorage.getItem('jwtToken');
+}
+
+
 export const userApi = createApi({
     reducerPath:"user",
     baseQuery: fetchBaseQuery({
         baseUrl : 'https://83hdq248j9.execute-api.ap-south-1.amazonaws.com/dev/dashboard',
-        credentials: 'include'
+        credentials: 'include',
+        prepareHeaders(headers) {
+            const token = getJwtToken();
+            if (token) {
+              headers.set('Authorization', `${token}`);
+            }
+            return headers;
+          }
     }),
     endpoints(builder){
         return {
